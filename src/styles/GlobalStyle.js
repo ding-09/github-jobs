@@ -6,6 +6,9 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Kumbh Sans', sans-serif;
+        &:focus {
+            outline: none;
+        }
     }
     html { 
         height: 100%;
@@ -15,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
         height: 100%;
         font-size: 1.6rem;
         line-height: 2.6rem;
+        background: ${(props) =>
+          props.mode === 'dark'
+            ? props.theme.darkMode.background
+            : props.theme.lightMode.background};
     }
     h1 {
         font-size: 2.8rem;

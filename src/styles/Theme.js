@@ -10,6 +10,14 @@ const Theme = {
     grey: '#9daec2',
     darkGrey: '#6e8098',
   },
+  lightMode: {
+    background: '#f4f6f8',
+    body: '#ffffff',
+  },
+  darkMode: {
+    background: '#121721',
+    body: "#19202d"
+  },
 };
 
 export default Theme;
