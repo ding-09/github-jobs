@@ -12,11 +12,10 @@ const SecondaryLightButton = ({ buttonText }) => {
 const Button = styled.button`
   font-size: 1.6rem;
   font-weight: 700;
-  line-height: 1.6rem;
-  margin: 5rem;
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
   background: ${(props) => props.theme.primaryColors.violet};
-  padding: 1.5rem 3.9rem;
+  padding: 1.5rem 3.8rem;
   border: none;
   border-radius: 0.5rem;
   &:hover {

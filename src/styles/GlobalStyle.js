@@ -6,9 +6,6 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Kumbh Sans', sans-serif;
-        &:focus {
-            outline: none;
-        }
     }
     html { 
         height: 100%;
@@ -16,8 +13,8 @@ const GlobalStyle = createGlobalStyle`
     }
     body {
         height: 100%;
-        font-size: 1.6rem;
-        line-height: 2.6rem;
+        font-size: 1.2rem;
+        /* line-height: 2.6rem; */
         background: ${(props) =>
           props.mode === 'dark'
             ? props.theme.darkMode.background
@@ -42,6 +39,15 @@ const GlobalStyle = createGlobalStyle`
     button {
         display: inline-block;
         cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+    }
+    input {
+        cursor: pointer;   
+        &:focus {
+            outline: none;
+        }
     }
 `;
 
