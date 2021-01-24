@@ -7,6 +7,8 @@ import {
   BrowserRouter,
 } from 'react-router-dom';
 import Header from './components/Header';
+import Home from './pages/Home';
+import JobCard from './components/JobCard';
 
 const App = () => {
   const [currentMode, setCurrentMode] = useState('light');
@@ -18,6 +20,11 @@ const App = () => {
     <BrowserRouter>
       <GlobalStyle mode={currentMode}/>
       <Header changeMode={changeMode}/>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
     </BrowserRouter>
   );
 };

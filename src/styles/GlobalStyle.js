@@ -29,6 +29,10 @@ const GlobalStyle = createGlobalStyle`
         line-height: 2.9rem;
     }
     h3 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    h4 {
         font-size: 1.4rem;
         line-height: 1.8rem;
     }

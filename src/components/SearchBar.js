@@ -6,8 +6,12 @@ import { MdLocationOn as LocationIcon } from 'react-icons/md';
 import checkIcon from '../assets/desktop/icon-check.svg';
 
 const SearchBar = () => {
+    const handleSubmit = (e) => {
+        alert('hello world');
+    }
+
   return (
-    <Form onSubmit={() => alert('hello')}>
+    <Form onSubmit={handleSubmit}>
       <div className="form-group" id="description">
         <SearchIcon />
         <input type="text" />

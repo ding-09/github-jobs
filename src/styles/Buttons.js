@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MainLightButton = ({ buttonText }) => {
-  return <Button>{buttonText}</Button>;
+const MainLightButton = ({ buttonText, type, onClick}) => {
+return <Button type={type} onClick={onClick}>{buttonText}</Button>;
 };
 
 const SecondaryLightButton = ({ buttonText }) => {
