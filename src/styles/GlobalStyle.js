@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
           props.mode === 'dark'
             ? props.theme.darkMode.background
             : props.theme.lightMode.background};
+        position: relative;
     }
     h1 {
         font-size: 2.8rem;
@@ -52,6 +53,17 @@ const GlobalStyle = createGlobalStyle`
         &:focus {
             outline: none;
         }
+    }
+    .card-color {
+        background: ${(props) =>
+          props.mode === 'dark'
+            ? props.theme.darkMode.cardColor
+            : props.theme.lightMode.cardColor};
+    }
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 48%;
     }
 `;
 

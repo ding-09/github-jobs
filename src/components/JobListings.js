@@ -48,10 +48,10 @@ const JobListings = ({ totalListings }) => {
 };
 
 const Main = styled.main`
-  width: 76%;
+  max-width: 76%;
+  height: auto;
   margin: 12rem auto 0;
   padding: 2.5rem 0 10rem;
-  border: 1px solid red;
   text-align: center;
 `;
 
@@ -59,8 +59,8 @@ const JobSection = styled.section`
   width: 100%;
   margin-bottom: 5.6rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(35rem, 1fr));
-  grid-template-rows: repeat(4, 22.8rem);
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-auto-rows: 22.8rem;
   gap: 4rem 3rem;
   text-align: left;
 `;

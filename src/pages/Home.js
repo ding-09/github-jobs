@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import JobListings from '../components/JobListings';
+import ReactLoading from 'react-loading';
 
 const Home = () => {
   // get all posts
@@ -31,7 +32,11 @@ const Home = () => {
     getData();
   }, [pageNum]);
 
-  return finishedLoading && <JobListings totalListings={totalListings} />;
+  return finishedLoading ? (
+    <JobListings totalListings={totalListings} />
+  ) : (
+    <ReactLoading type={'bubbles'} color={'#5964E0'} width={80} className="loader"/>
+  );
 };
 
 export default Home;

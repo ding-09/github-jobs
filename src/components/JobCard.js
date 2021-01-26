@@ -1,18 +1,20 @@
 import React from 'react';
+import formatDate from './FormatDate';
 import styled from 'styled-components';
+import { IoBriefcaseOutline as BriefcaseIcon } from 'react-icons/io5';
 
 const JobCard = ({ listing }) => {
   return (
-    <Card>
+    <Card className="card-color">
       <div className="logo">
-        <img src={listing.company_logo} alt="company logo" />
+        <BriefcaseIcon />
       </div>
       <div className="info-container">
         <div className="main-info">
           <p>
-            <span>{listing.created_at}</span>
-            <span className="dot">&#8226;</span>
-            <span>{listing.type}</span>
+            <span className="date">{formatDate(listing.created_at)} ago </span>
+            <span className="dot">&#8226; </span>
+            <span className="job-type"> {listing.type}</span>
           </p>
           <h3>{listing.title}</h3>
           <p className="company">{listing.company}</p>
@@ -27,41 +29,59 @@ const Card = styled.article`
   position: relative;
   width: 100%;
   height: 100%;
-  border: 1px solid red;
   padding: 4.7rem 3.2rem 3rem;
   border-radius: 0.6rem;
+  cursor: pointer;
   .logo {
     width: 5rem;
     height: 5rem;
     position: absolute;
     bottom: 100%;
     transform: translateY(50%);
-    border: 1px solid blue;
     border-radius: 1.5rem;
     overflow: hidden;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    background: ${(props) => props.theme.primaryColors.violet};
+    svg {
+      color: white;
+      width: 2.5rem;
+      height: 2.5rem;
+      position: absolute;
+      top: 12.5px;
+      left: 12.5px;
     }
   }
   .info-container {
-    border: 1px solid orange;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    position: relative;
     .main-info {
+      position: relative;
       h3 {
-        margin: 1.6rem 0;
+        margin: 1.5rem 0;
       }
       p {
         color: ${(props) => props.theme.secondaryColors.darkGrey};
         line-height: 1.6rem;
       }
+      .date {
+        padding-right: 0.5rem;
+      }
+      .dot {
+        position: absolute;
+        top: 2px;
+      }
+      .job-type {
+        padding-left: 1.5rem;
+      }
+      .company {
+        font-size: 1.4rem;
+      }
     }
     .location {
       color: ${(props) => props.theme.primaryColors.violet};
+      position: absolute;
+      bottom: 0;
     }
   }
 `;
