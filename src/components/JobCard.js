@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import formatDate from './FormatDate';
 import styled from 'styled-components';
 import { IoBriefcaseOutline as BriefcaseIcon } from 'react-icons/io5';
@@ -16,7 +17,7 @@ const JobCard = ({ listing }) => {
             <span className="dot">&#8226; </span>
             <span className="job-type"> {listing.type}</span>
           </p>
-          <h3>{listing.title}</h3>
+          <h3 className="job-title">{listing.title}</h3>
           <p className="company">{listing.company}</p>
         </div>
         <h4 className="location">{listing.location}</h4>
@@ -31,7 +32,6 @@ const Card = styled.article`
   height: 100%;
   padding: 4.7rem 3.2rem 3rem;
   border-radius: 0.6rem;
-  cursor: pointer;
   .logo {
     width: 5rem;
     height: 5rem;

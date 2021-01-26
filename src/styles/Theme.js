@@ -13,10 +13,12 @@ const Theme = {
   lightMode: {
     background: '#f4f6f8',
     cardColor: '#ffffff',
+    textColor: '#19202d'
   },
   darkMode: {
     background: '#121721',
-    cardColor: "#19202d"
+    cardColor: "#19202d",
+    textColor: '#ffffff'
   },
 };
 

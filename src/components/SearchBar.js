@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { MainLightButton } from '../styles/Buttons';
 import { BiSearchAlt2 as SearchIcon } from 'react-icons/bi';
@@ -6,23 +6,44 @@ import { MdLocationOn as LocationIcon } from 'react-icons/md';
 import checkIcon from '../assets/desktop/icon-check.svg';
 
 const SearchBar = () => {
-    const handleSubmit = (e) => {
-        alert('hello world');
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({ description, location, fullTime });
+  };
+
+  // searchbar input values
+  const [description, setDescription] = useState('');
+  const [location, setLocation] = useState('');
+  const [fullTime, setFullTime] = useState(false);
 
   return (
     <Form onSubmit={handleSubmit}>
       <div className="form-group" id="description">
         <SearchIcon />
-        <input type="text" />
+        <input
+          type="text"
+          name="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
       </div>
       <div className="form-group" id="location">
         <LocationIcon />
-        <input type="text" />
+        <input
+          type="text"
+          name="location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
       </div>
       <div className="form-group" id="submit">
         <div className="sub-form-group">
-          <input type="checkbox" name="fullTime" />
+          <input
+            type="checkbox"
+            name="fullTime"
+            value={fullTime}
+            onChange={(e) => setFullTime(!fullTime)}
+          />
           <label htmlFor="fullTime">Full Time Only</label>
         </div>
         <MainLightButton buttonText="Search" type="submit" />

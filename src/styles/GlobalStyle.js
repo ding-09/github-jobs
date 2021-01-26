@@ -60,6 +60,16 @@ const GlobalStyle = createGlobalStyle`
             ? props.theme.darkMode.cardColor
             : props.theme.lightMode.cardColor};
     }
+    .job-title {
+        cursor: pointer; 
+        color: ${(props) =>
+          props.mode === 'dark'
+            ? props.theme.darkMode.textColor
+            : props.theme.lightMode.textColor};
+        &:hover {
+            color: ${(props) => props.theme.secondaryColors.darkGrey};
+        }
+    }
     .loader {
         position: absolute;
         top: 50%;
