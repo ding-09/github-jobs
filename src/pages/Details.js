@@ -10,7 +10,7 @@ const Details = ({ match }) => {
   // fetch job details
   const fetchDetails = async () => {
     const details = await axios.get(
-      `https://my-cors-proxy-69.herokuapp.com/jobs.github.com/positions/${match.params.id}.json?markdown=true`
+      `https://my-cors-proxy-69.herokuapp.com/jobs.github.com/positions/${match.params.id}.json?`
     );
     setJobDetails(details.data);
     setFinishedLoading(true);

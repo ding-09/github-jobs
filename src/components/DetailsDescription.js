@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import formatDate from './formatDate';
+import parse from 'html-react-parser';
 import { MainLightButton } from '../styles/Buttons';
-import applyNowBG from '../assets/desktop/bg-pattern-detail-footer.svg';
 
 const DetailsDescription = ({
   created_at,
@@ -10,9 +10,8 @@ const DetailsDescription = ({
   location,
   title,
   description,
-  how_to_apply,
+  applyURL
 }) => {
-  const applyDetails = how_to_apply.split(' ');
   return (
     <JobDetailsSection>
       <section className="header">
@@ -25,9 +24,12 @@ const DetailsDescription = ({
           <h1 className="job-title">{title}</h1>
           <h4 className="location">{location}</h4>
         </div>
-        <MainLightButton buttonText="Apply Now" />
+        <MainLightButton
+          buttonText="Apply Now"
+          onClick={() => (window.open(applyURL, '_blank'))}
+        />
       </section>
-      <section className="job-description">{description}</section>
+      <section className="job-description">{parse(description)}</section>
     </JobDetailsSection>
   );
 };
@@ -38,7 +40,6 @@ const JobDetailsSection = styled.section`
   padding: 4.5rem 4.4rem;
   background: #ffffff;
   margin: 3.2rem auto;
-  border: 1px solid orange;
   .header {
     position: relative;
     width: 100%;
