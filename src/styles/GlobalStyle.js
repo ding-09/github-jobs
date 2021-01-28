@@ -24,18 +24,25 @@ const GlobalStyle = createGlobalStyle`
     h1 {
         font-size: 2.8rem;
         line-height: 3.4rem;
+        color: ${(props) => props.theme.primaryColors.veryDarkBlue}; 
     }
     h2 {
         font-size: 2.4rem; 
         line-height: 2.9rem;
+        color: ${(props) => props.theme.primaryColors.veryDarkBlue}; 
+
     }
     h3 {
         font-size: 2rem;
         line-height: 2rem;
+        color: ${(props) => props.theme.primaryColors.veryDarkBlue}; 
+
     }
     h4 {
         font-size: 1.4rem;
         line-height: 1.8rem;
+        color: ${(props) => props.theme.primaryColors.veryDarkBlue}; 
+
     }
     img {
         display: block;
@@ -61,13 +68,15 @@ const GlobalStyle = createGlobalStyle`
             : props.theme.lightMode.cardColor};
     }
     .job-title {
-        cursor: pointer; 
-        color: ${(props) =>
-          props.mode === 'dark'
-            ? props.theme.darkMode.textColor
-            : props.theme.lightMode.textColor};
-        &:hover {
-            color: ${(props) => props.theme.secondaryColors.darkGrey};
+        a {
+            text-decoration: none;
+            color: ${(props) =>
+              props.mode === 'dark'
+                ? props.theme.darkMode.textColor
+                : props.theme.lightMode.textColor};
+            &:hover {
+                color: ${(props) => props.theme.secondaryColors.darkGrey};
+            }
         }
     }
     .loader {

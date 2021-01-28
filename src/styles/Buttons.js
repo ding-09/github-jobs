@@ -5,8 +5,8 @@ const MainLightButton = ({ buttonText, type, onClick}) => {
 return <Button type={type} onClick={onClick}>{buttonText}</Button>;
 };
 
-const SecondaryLightButton = ({ buttonText }) => {
-  return <SecondaryButton>{buttonText}</SecondaryButton>;
+const SecondaryLightButton = ({ buttonText, onClick }) => {
+  return <SecondaryButton onClick={onClick}>{buttonText}</SecondaryButton>;
 };
 
 const Button = styled.button`

@@ -11,7 +11,6 @@ const Home = () => {
 
   const getData = async () => {
     try {
-      console.log(pageNum);
       const data = await axios.get(
         `https://my-cors-proxy-69.herokuapp.com/jobs.github.com/positions.json?search=developer&page=${pageNum}`
       );

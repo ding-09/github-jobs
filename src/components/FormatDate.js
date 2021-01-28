@@ -8,7 +8,7 @@ const formatDate = (dateString) => {
   const relativeDate = moment(date).fromNow();
   const relativeDateArr = relativeDate.split(' ');
   let formattedDate = '';
-  relativeDateArr[0] === 'a'
+  relativeDateArr[0] === 'a' || relativeDateArr[0] === 'an'
     ? (formattedDate += '1')
     : (formattedDate += relativeDateArr[0]);
   formattedDate += relativeDateArr[1][0];

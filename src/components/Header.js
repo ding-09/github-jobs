@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import headerBG from '../assets/desktop/bg-pattern-header.svg';
 import logo from '../assets/desktop/logo.svg';
@@ -6,12 +7,13 @@ import ToggleModeBtn from './ToggleModeBtn';
 import SearchBar from './SearchBar';
 
 const Header = ({ changeMode }) => {
+  let location = useLocation();
   return (
     <StyledHeader>
       <div className="container">
         <img src={logo} alt="logo" />
         <ToggleModeBtn changeMode={changeMode} />
-        <SearchBar />
+        {location.pathname === '/' && <SearchBar />}
       </div>
     </StyledHeader>
   );
